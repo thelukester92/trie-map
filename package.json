@@ -1,6 +1,6 @@
 {
   "name": "@thelukester92/trie-map",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Luke Godfrey <lukeben92@gmail.com>",
   "description": "A prefix tree implementation for auto-complete and efficient prefix matching.",
