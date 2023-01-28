@@ -72,7 +72,7 @@ describe('TrieMap', () => {
     });
 
     it('handles `findByLongestPrefix` correctly with an explicit KeyPointer', () => {
-        const trie = new TrieMap<string>();
+        const trie = new TrieMap<string>([], { caseSensitive: true });
         trie.set('ABCDEF', 'abcdef');
         trie.set('ABCGHIJKL', 'abcghijkl');
         trie.set('ABCGHI', 'abcghi');
@@ -80,22 +80,22 @@ describe('TrieMap', () => {
 
         let data = 'this is a long string but it has ABCGHIJKL somewhere inside';
         let keyPointer: TrieMapKeyPointer = { data, pos: data.indexOf('ABCGHI'), posMax: data.length };
-        expect(trie.findByLongestPrefix(keyPointer)).toEqual(['ABCGHIJKL', 'abcghijkl']);
+        expect(trie.findByLongestPrefix(keyPointer, false)).toEqual(['ABCGHIJKL', 'abcghijkl']);
 
         data = 'this is a long string but it has ABCGHIJK somewhere inside';
         keyPointer = { data, pos: data.indexOf('ABCGHIJK'), posMax: data.length };
-        expect(trie.findByLongestPrefix(keyPointer)).toEqual(['ABCGHI', 'abcghi']);
+        expect(trie.findByLongestPrefix(keyPointer, false)).toEqual(['ABCGHI', 'abcghi']);
 
         data = 'this is a long string but it has ABCGH somewhere inside';
         keyPointer = { data, pos: data.indexOf('ABCGH'), posMax: data.length };
-        expect(trie.findByLongestPrefix(keyPointer)).toEqual(['ABC', 'abc']);
+        expect(trie.findByLongestPrefix(keyPointer, false)).toEqual(['ABC', 'abc']);
 
         data = 'this is a long string but it has AB somewhere inside';
         keyPointer = { data, pos: data.indexOf('AB'), posMax: data.length };
-        expect(trie.findByLongestPrefix(keyPointer)).toBe(null);
+        expect(trie.findByLongestPrefix(keyPointer, false)).toBe(null);
 
         data = 'this is a long string but it has ABCGHIJKL somewhere inside';
         keyPointer = { data, pos: data.indexOf('ABCGHIJKL'), posMax: data.indexOf('ABCGHIJKL') + 6 };
-        expect(trie.findByLongestPrefix(keyPointer)).toEqual(['ABCGHI', 'abcghi']);
+        expect(trie.findByLongestPrefix(keyPointer, false)).toEqual(['ABCGHI', 'abcghi']);
     });
 });
