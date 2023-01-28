@@ -1,15 +1,21 @@
 {
-  "name": "trie-map",
-  "author": "Luke Godfrey",
+  "name": "@thelukester92/trie-map",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Luke Godfrey <lukeben92@gmail.com>",
   "description": "A prefix tree implementation for auto-complete and efficient prefix matching.",
-  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
     "format": "prettier -w src",
     "lint": "eslint src",
     "test": "jest --config jest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelukester92/trie-map"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
