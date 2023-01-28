@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/opt/python@3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/luke/Documents/projects/trie-map/package.json: Unexpected token } in JSON at position 326
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "trie-map",
+    "author": "Luke Godfrey",
+    "version": "0.0.1",
+    "description": "A prefix tree implementation for auto-complete and efficient prefix matching.",
+    "private": true,
+    "scripts": {
+      "build": "tsc",
+      "format": "prettier -w src",
+      "lint": "eslint src",
+      "test": "jest --config jest.json",
+    },
+    "devDependencies": {
+      "@types/jest": "^29.2.4",
+      "@typescript-eslint/eslint-plugin": "^5.47.0",
+      "@typescript-eslint/parser": "^5.47.0",
+      "eslint": "^8.30.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "jest": "^29.3.1",
+      "prettier": "^2.8.1",
+      "ts-jest": "^29.0.3",
+      "typescript": "^4.9.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
